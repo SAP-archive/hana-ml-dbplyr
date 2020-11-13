@@ -59,7 +59,20 @@ DF_JOINED <- inner_join(DF1, DF2, key = "CUSTOMERID")
 #control the results
 DF_JOINED
 
+#have a look at the sql query
+show_query(DFJOINED)
 
+#collect data into local enviornment
+DFJOINED_LOCAL <- collect(DFJOINED)
+
+#set a filter on the joined table
+FILTER <- filter(DFJOINED, SCORE > 4)
+
+#show sql query
+show_query(FILTER)
+
+#collect data into local enviornment
+FILTER_LOCAL <- collect(FILTER)
 
 
 
